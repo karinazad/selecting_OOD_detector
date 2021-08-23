@@ -1,7 +1,9 @@
 Authors
 -------
 
-* Eric (New contributor)
-* Anthony 
+* Karina Zadorozhny
+* Giovanni Cinà
+
+*Pacmed BV, Netherlands*
 
 
