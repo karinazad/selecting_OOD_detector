@@ -36,11 +36,11 @@ OODPipeline
 
             Pipeline to fit novelty estimators on in-distribution data
             and evaluate novelty of Out-of-Distribution (OOD) groups.
-
+            
             Example of usage: 
-            
+
             ::
-            
+
                # Initialize the pipeline 
                oodpipeline = OODPipeline()
                
@@ -53,6 +53,7 @@ OODPipeline
 
                # Inspect AUC-ROC scores of detecting OOD groups
                oodpipeline.get_ood_aucs_scores()
+
 
             .. rubric:: Parameters
                :name: parameters
