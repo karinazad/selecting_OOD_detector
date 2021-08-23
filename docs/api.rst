@@ -92,7 +92,7 @@ OOD Pipeline
                {"AE": NoveltyEstimator, "PPCA": NoveltyEstimator}} )``
                
                .. rubric:: Parameters
-               :name: parameters
+                  :name: parameters
 
                --------------
 
