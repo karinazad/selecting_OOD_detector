@@ -38,8 +38,9 @@ OODPipeline
             and evaluate novelty of Out-of-Distribution (OOD) groups.
 
             Example of usage: 
-
+            
             ::
+            
                # Initialize the pipeline 
                oodpipeline = OODPipeline()
                
