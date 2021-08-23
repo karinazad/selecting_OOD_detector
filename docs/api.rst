@@ -204,7 +204,12 @@ OOD Pipeline
             
                   Plots boxplots for each OOD group as compared to the in-distribution test
                   data. Adds statistical annotation of difference significance 
-                  under Mann-Whitney one sided test using `statannot` package.
+                  under Mann-Whitney one sided test using ``statannot`` package.
+                  
+                  P-values: 
+                  **** 𝑝 < 0.0001; ***  𝑝 < 0.001; **    𝑝 < 0.01; *     𝑝 < 0.05; else ns 
+
+                  
 
                .. rubric:: Parameters
                   :name: parameters
