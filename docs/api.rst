@@ -172,8 +172,7 @@ OOD Pipeline
             
 
 
-         ``def plot_auc_scores(self, ood_groups_selections=None, 
-         show_stderr=True, save_dir=None, **plot_kwargs)``
+         ``def plot_auc_scores(self, ood_groups_selections=None, show_stderr=True, save_dir=None, **plot_kwargs)``
             .. container:: desc
 
                Plots a heatmap of AUC-ROC scores of OOD detection for
