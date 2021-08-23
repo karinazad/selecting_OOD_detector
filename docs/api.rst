@@ -28,21 +28,17 @@ OODPipeline
 
    .. container:: section
    
-            .. rubric:: Module
-                  :name: header-classes
-                  :class: section-title
+         .. rubric:: Module
+            :name: header-classes
+            :class: section-title
 
-                  ``selecting_OOD_detector.pipeline.ood_pipeline.OODPipeline``
-
-   .. container:: section
+            ``selecting_OOD_detector.pipeline.ood_pipeline.OODPipeline``
 
    .. container:: section
 
    .. container:: section
 
-      .. rubric:: Class
-         :name: header-classes
-         :class: section-title
+   .. container:: section
 
       ``class OODPipeline (**kwargs)``
          .. container:: desc
