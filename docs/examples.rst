@@ -77,3 +77,5 @@ To visualize distributions of novelty scores, plot histogram using `plot_score_d
 
 .. image:: https://raw.githubusercontent.com/karinazad/selecting_OOD_detector/master/docs/img/download.png
 
+
+The plot is annotated with the results of Mann-Whitney one-sided statistical test from ``statannot``.
