@@ -201,6 +201,10 @@ OOD Pipeline
 
          ``def plot_box_plot(self, ood_groups_selections=None, save_dir=None)``
             .. container:: desc
+            
+                  Plots boxplots for each OOD group as compared to the in-distribution test
+                  data. Adds statistical annotation of difference significance 
+                  under Mann-Whitney one sided test using `statannot` package.
 
                .. rubric:: Parameters
                   :name: parameters
@@ -213,14 +217,18 @@ OOD Pipeline
                ``save_dir``: ``Optional(str)``
                   If a path to a directory is provided, saves plots for
                   each OOD group separately.
-
+                  
       
       Plot score distributionns
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
          ``def plot_score_distr(self, ood_groups_selections=None, save_dir=None)``
             .. container:: desc
-
+            
+                  Plots histograms for each OOD group as compared to the in-distribution test
+                  data. To avoid outliers from skewing the distributions on the plots to the left, clips values 
+                  of novely scores to 0-95% range of in-distribution novelty scores.
+                  
                .. rubric:: Parameters
                   :name: parameters
 
