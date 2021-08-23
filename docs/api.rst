@@ -109,7 +109,7 @@ OOD Pipeline
                ``n_trials``: ``int`` 
                   Number of trials to run.
                   
-          ``def evaluate_ood_groups(self, ood_groups, return_averaged=False)``
+         ``def evaluate_ood_groups(self, ood_groups, return_averaged=False)``
             .. container:: desc
 
                Gives novelty scores to OOD groups. Returns and stores
