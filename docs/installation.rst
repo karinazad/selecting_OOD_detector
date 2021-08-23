@@ -14,4 +14,11 @@ Append a path to the directory::
     sys.path.append(os.getcwd())
     
     
+Import OOD pipeline and apply to your data (see Examples)::
+
+    from selecting_OOD_detector.pipeline.ood_pipeline import OODPipeline
+ 
+
+    
+    
     
