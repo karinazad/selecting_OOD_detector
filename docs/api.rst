@@ -215,8 +215,9 @@ OOD Pipeline
                   If a path to a directory is provided, saves plots for
                   each OOD group separately.
 
-           
-     .. rubric:: Plot Score Distributions
+      
+      Plot score distributionns
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
          ``def plot_score_distr(self, ood_groups_selections=None, save_dir=None)``
             .. container:: desc
