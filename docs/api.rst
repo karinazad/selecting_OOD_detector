@@ -72,7 +72,7 @@ OODPipeline
 
             ``kwargs``
                model_selection: set Define which models to train, e.g.
-               {"PPCA", "LOF", "VAE"}. If selection is not provided, all
+               ``{"PPCA", "LOF", "VAE"}``. If selection is not provided, all
                available models are used.
 
 
@@ -90,9 +90,9 @@ OODPipeline
 
                Fits models on training data with n_trials different
                runs. Novelty estimators from each run are stored in a
-               nested dictionary in self.novelty_estimators. (E.g.: {0:
+               nested dictionary in self.novelty_estimators. (E.g.: ``{0:
                {"AE": NoveltyEstimator, "PPCA": NoveltyEstimator}, 1:
-               {"AE": NoveltyEstimator, "PPCA": NoveltyEstimator}} )
+               {"AE": NoveltyEstimator, "PPCA": NoveltyEstimator}} )``
                Parameters
 
                --------------
@@ -107,6 +107,7 @@ OODPipeline
                   OOD groups later.
 
                kwargs: 
+               
                ``y_train``: ``pd.DataFrame``
                   Labels corresponding to training data.
                ``n_trials``: ``int`` 
@@ -127,8 +128,8 @@ OODPipeline
                ``ood_groups`` : ``dict``
                   Dictionary of OOD groups. Dictionary has to contain a
                   name of each OOD group and features in a pd.DataFrame.
-                  Example: {"Flu patients": X_flu, "Ventilated
-                  patients": X_vent}
+                  Example: ``{"Flu patients": X_flu, "Ventilated
+                  patients": X_vent}``
                ``return_averaged`` : ``bool``
                   If true, returns averaged novelty score for each
                   sample. The shape of novelty scores given by each
@@ -174,7 +175,6 @@ OODPipeline
                   averaged) or a list of AUC-ROC scores.
 
             
-
 
          ``def plot_auc_scores(self, ood_groups_selections=None, show_stderr=True, save_dir=None, **plot_kwargs)``
             .. container:: desc
