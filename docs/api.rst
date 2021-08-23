@@ -109,9 +109,9 @@ OOD Pipeline
                   ``y_train``: ``pd.DataFrame``
                            Labels corresponding to training data.
                   ``n_trials``: ``int`` 
-                           Number of trials to run.
-                  
-                 
+                           Number of independent trials to run, default is set to 5. All subsequent results will be averaged from the indicated number of runs. 
+                           
+                
                   
          ``def evaluate_ood_groups(self, ood_groups, return_averaged=False)``
             .. container:: desc
