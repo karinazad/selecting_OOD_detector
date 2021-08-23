@@ -37,11 +37,12 @@ OODPipeline
             Pipeline to fit novelty estimators on in-distribution data
             and evaluate novelty of Out-of-Distribution (OOD) groups.
 
-            Example of usage: # Initialize the pipeline oodpipeline =
-            OODPipeline()
+            Example of usage: 
 
             ::
-
+               # Initialize the pipeline 
+               oodpipeline = OODPipeline()
+               
                # Fit the pipeline on in-distribution training data and compute novelty scores for in-distribution test data
                oodpipeline.fit(X_train= X_train, X_test=X_test)
 
@@ -55,8 +56,8 @@ OODPipeline
             .. rubric:: Parameters
                :name: parameters
 
-            **``kwargs``**
-               model_selection: set Define which models to train, e.g.
+            ``kwargs``
+               ``model_selection``: ``set`` Define which models to train, e.g.
                {"PPCA", "LOF", "VAE"}. If selection is not provided, all
                available models are used.
 
@@ -82,12 +83,12 @@ OODPipeline
                .. rubric:: Parameters
                   :name: parameters
 
-               **``ood_groups``** : ``dict``
+               ``ood_groups`` : ``dict``
                   Dictionary of OOD groups. Dictionary has to contain a
                   name of each OOD group and features in a pd.DataFrame.
                   Example: {"Flu patients": X_flu, "Ventilated
                   patients": X_vent}
-               **``return_averaged``** : ``bool``
+               ``return_averaged`` : ``bool``
                   If true, returns averaged novelty score for each
                   sample. The shape of novelty scores given by each
                   model then corresponds to (1, n_samples). Else, the
@@ -98,7 +99,7 @@ OODPipeline
                .. rubric:: Returns
                   :name: returns
 
-               **``out_domain_scores``** : ``dict``
+               ``out_domain_scores`` : ``dict``
                   Returns a dictionary of novelty scores given by each
                   model for each sample in every OOD group.
 
@@ -114,10 +115,10 @@ OODPipeline
 
                --------------
 
-               **``X_train``** : ``pd.DataFrame``
+               ``X_train``: ``pd.DataFrame``
                   Training in-distribution data. Used to fit novelty
                   estimators.
-               **``X_test``** : ``pd.DataFrame``
+              ``X_test`` : ``pd.DataFrame``
                   Test in-distribution data. Used to calculate
                   self.in_domain_scores which are taken as base novelty
                   scores for the dataset and used for comparison against
@@ -138,19 +139,19 @@ OODPipeline
                .. rubric:: Parameters
                   :name: parameters
 
-               **``ood_groups_selections``** : ``Optional(list)``
+               ``ood_groups_selections`` : ``Optional(list)``
                   Optionally provide a selection of OOD groups for which
                   AUC-ROC score should be returned. If no selection is
                   provided, all groups ever evaluate by the pipeline
                   will be included.
-               **``return_averaged``** : ``bool``
+               ``return_averaged`` : ``bool``
                   Indicates whether to return averaged AUC-ROC scores
                   over n_trials run or a list of scores for every trial.
 
                .. rubric:: Returns
                   :name: returns
 
-               **``aucs_dict_groups``** : ``dict``
+               ``aucs_dict_groups``: ``dict``
                   A nested dictionary that contains a name of OOD group,
                   name of novelty estimator and either a float (if
                   averaged) or a list of AUC-ROC scores.
