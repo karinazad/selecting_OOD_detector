@@ -20,11 +20,11 @@ API Reference
 
 
 
-OODPipeline
+OOD Pipeline
 *****************
 
 
-``selecting_OOD_detector.pipeline.ood_pipeline``
+``selecting_OOD_detector.pipeline.ood_pipeline.OODPipeline``
 
    .. container:: section
       :name: section-intro
@@ -89,7 +89,7 @@ OODPipeline
                Fits models on training data with n_trials different
                runs. Novelty estimators from each run are stored in a
                nested dictionary in self.novelty_estimators. (E.g.: {0:
-               ``{"AE": NoveltyEstimator, "PPCA": NoveltyEstimator}, \ 1:
+               {"AE": NoveltyEstimator, "PPCA": NoveltyEstimator},  1:
                {"AE": NoveltyEstimator, "PPCA": NoveltyEstimator}} )``
                Parameters
 
@@ -173,7 +173,8 @@ OODPipeline
             
 
 
-         ``def plot_auc_scores(self, ood_groups_selections=None, show_stderr=True, \ save_dir=None, **plot_kwargs)``
+         ``def plot_auc_scores(self, ood_groups_selections=None, 
+         show_stderr=True, save_dir=None, **plot_kwargs)``
             .. container:: desc
 
                Plots a heatmap of AUC-ROC scores of OOD detection for
