@@ -67,8 +67,8 @@ OOD Pipeline
             .. rubric:: Parameters
                :name: parameters
 
-            ``kwargs``
-               model_selection: set Define which models to train, e.g.
+            ``kwargs``:
+               ``model_selection``: ``set`` Define which models to train, e.g.
                ``{"PPCA", "LOF", "VAE"}``. If selection is not provided, all
                available models are used.
 
@@ -90,7 +90,9 @@ OOD Pipeline
                nested dictionary in self.novelty_estimators. (E.g.: {0:
                {"AE": NoveltyEstimator, "PPCA": NoveltyEstimator},  1:
                {"AE": NoveltyEstimator, "PPCA": NoveltyEstimator}} )``
-               Parameters
+               
+               .. rubric:: Parameters
+               :name: parameters
 
                --------------
 
@@ -103,7 +105,8 @@ OOD Pipeline
                   scores for the dataset and used for comparison against
                   OOD groups later.
 
-               kwargs: 
+               ``kwargs``:
+               
                ``y_train``: ``pd.DataFrame``
                   Labels corresponding to training data.
                ``n_trials``: ``int`` 
