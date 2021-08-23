@@ -106,11 +106,10 @@ OOD Pipeline
                   OOD groups later.
 
                ``kwargs``:
-               
-               ``y_train``: ``pd.DataFrame``
-                  Labels corresponding to training data.
-               ``n_trials``: ``int`` 
-                  Number of trials to run.
+                  ``y_train``: ``pd.DataFrame``
+                           Labels corresponding to training data.
+                  ``n_trials``: ``int`` 
+                           Number of trials to run.
                   
                  
                   
@@ -213,7 +212,7 @@ OOD Pipeline
                   data. Adds statistical annotation of difference significance 
                   under Mann-Whitney one sided test using ``statannot`` package.
                   
-                  P-values: 
+                  p-values: 
                   **** 𝑝 < 0.0001; ***  𝑝 < 0.001; **    𝑝 < 0.01; *     𝑝 < 0.05; else ns 
 
                   
@@ -231,8 +230,6 @@ OOD Pipeline
                   each OOD group separately.
                   
       
-      Plot score distributionns
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
          ``def plot_score_distr(self, ood_groups_selections=None, save_dir=None)``
             .. container:: desc
