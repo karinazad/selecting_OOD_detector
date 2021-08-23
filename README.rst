@@ -79,7 +79,7 @@ Finally, inspect AUC-ROC score of OOD detection:
 
 .. code:: py
 
-    auc_scores = oodpipe.get_ood_aucs_scores(return_averaged=True)
+    auc_scores = oodpipe.get_aucs_scores(return_averaged=True)
 
 +---------------------+---------+---------+---------+---------+---------+---------+
 |                     | AE      | DUE     | Flow    | LOF     | PPCA    | VAE     |
