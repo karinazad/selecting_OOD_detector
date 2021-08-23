@@ -4,7 +4,7 @@ API Reference
          
 .. container::
 
-   -  .. rubric:: `Classes <#header-classes>`__
+   -  .. rubric:: `Class <#header-class>`__
          :name: classes
 
       -  .. rubric:: ``OODPipeline``
@@ -39,6 +39,10 @@ OODPipeline
    .. container:: section
 
    .. container:: section
+   
+   .. rubric:: Class
+            :name: header-class
+            :class: section-title
 
       ``class OODPipeline (**kwargs)``
          .. container:: desc
@@ -109,7 +113,7 @@ OODPipeline
                ``n_trials``: ``int`` 
                   Number of trials to run.
                   
-           ``def evaluate_ood_groups(self, ood_groups, return_averaged=False)``
+         ``def evaluate_ood_groups(self, ood_groups, return_averaged=False)``
             .. container:: desc
 
                Gives novelty scores to OOD groups. Returns and stores
