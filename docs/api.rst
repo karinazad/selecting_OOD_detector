@@ -78,9 +78,9 @@ OOD Pipeline
 
          -  `BasePipeline <base.html#selecting_OOD_detector.pipeline.base.BasePipeline>`__
 
-         .. rubric:: Methods
-            :name: methods
 
+         .. rubric:: Fit
+            :name: fit
 
          ``def fit(self, X_train, X_test, **kwargs)``
             .. container:: desc
@@ -108,6 +108,10 @@ OOD Pipeline
                   Labels corresponding to training data.
                ``n_trials``: ``int`` 
                   Number of trials to run.
+                  
+                  
+        .. rubric:: Evaluate OOD Groups
+            :name: evaluate_ood_groups 
                   
          ``def evaluate_ood_groups(self, ood_groups, return_averaged=False)``
             .. container:: desc
