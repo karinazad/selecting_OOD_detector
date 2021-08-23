@@ -1,29 +1,8 @@
 API Reference
 ####################################
 
-
-OODPipeline
-*****************
-
-
-``selecting_OOD_detector.pipeline.ood_pipeline``
-
-.. contents::
-   :depth: 3
-..
-
          
 .. container::
-
-   .. rubric:: Index
-      :name: index
-
-   .. container:: toc
-
-   -  .. rubric:: Super-module
-         :name: super-module
-
-      -  ``selecting_OOD_detector.pipeline``
 
    -  .. rubric:: `Classes <#header-classes>`__
          :name: classes
@@ -38,6 +17,14 @@ OODPipeline
          -  ``plot_box_plot``
          -  ``plot_score_distr``
          
+
+
+
+OODPipeline
+*****************
+
+
+``selecting_OOD_detector.pipeline.ood_pipeline``
 
    .. container:: section
       :name: section-intro
