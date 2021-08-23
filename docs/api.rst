@@ -18,8 +18,6 @@ API Reference
          -  ``plot_score_distr``
          
 
-
-
 OODPipeline
 *****************
 
