@@ -23,16 +23,16 @@ API Reference
 OODPipeline
 *****************
 
-      .. rubric:: Module
-         :name: header-classes
-         :class: section-title
-
-         ``selecting_OOD_detector.pipeline.ood_pipeline``
-
    .. container:: section
       :name: section-intro
 
    .. container:: section
+   
+            .. rubric:: Module
+                  :name: header-classes
+                  :class: section-title
+
+                  ``selecting_OOD_detector.pipeline.ood_pipeline.OODPipeline``
 
    .. container:: section
 
