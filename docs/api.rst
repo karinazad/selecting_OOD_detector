@@ -84,7 +84,35 @@ OODPipeline
          .. rubric:: Methods
             :name: methods
 
-         ``def evaluate_ood_groups(self, ood_groups, return_averaged=False)``
+       
+         ``def fit(self, X_train, X_test, **kwargs)``
+            .. container:: desc
+
+               Fits models on training data with n_trials different
+               runs. Novelty estimators from each run are stored in a
+               nested dictionary in self.novelty_estimators. (E.g.: {0:
+               {"AE": NoveltyEstimator, "PPCA": NoveltyEstimator}, 1:
+               {"AE": NoveltyEstimator, "PPCA": NoveltyEstimator}} )
+               Parameters
+
+               --------------
+
+               ``X_train`` : ``pd.DataFrame``
+                  Training in-distribution data. Used to fit novelty
+                  estimators.
+               ``X_test`` : ``pd.DataFrame``
+                  Test in-distribution data. Used to calculate
+                  self.in_domain_scores which are taken as base novelty
+                  scores for the dataset and used for comparison against
+                  OOD groups later.
+
+               kwargs: 
+               ``y_train``: ``pd.DataFrame``
+                  Labels corresponding to training data.
+               ``n_trials``: ``int`` 
+                  Number of trials to run.
+                  
+           ``def evaluate_ood_groups(self, ood_groups, return_averaged=False)``
             .. container:: desc
 
                Gives novelty scores to OOD groups. Returns and stores
@@ -115,35 +143,7 @@ OODPipeline
              ``out_domain_scores`` : ``dict``
                   Returns a dictionary of novelty scores given by each
                   model for each sample in every OOD group.
-
-            
-
-         ``def fit(self, X_train, X_test, **kwargs)``
-            .. container:: desc
-
-               Fits models on training data with n_trials different
-               runs. Novelty estimators from each run are stored in a
-               nested dictionary in self.novelty_estimators. (E.g.: {0:
-               {"AE": NoveltyEstimator, "PPCA": NoveltyEstimator}, 1:
-               {"AE": NoveltyEstimator, "PPCA": NoveltyEstimator}} )
-               Parameters
-
-               --------------
-
-               ``X_train`` : ``pd.DataFrame``
-                  Training in-distribution data. Used to fit novelty
-                  estimators.
-               ``X_test`` : ``pd.DataFrame``
-                  Test in-distribution data. Used to calculate
-                  self.in_domain_scores which are taken as base novelty
-                  scores for the dataset and used for comparison against
-                  OOD groups later.
-
-               kwargs: 
-               ``y_train``: ``pd.DataFrame``
-                  Labels corresponding to training data.
-               ``n_trials``: ``int`` 
-                  Number of trials to run.
+                  
 
          ``def get_auc_scores(self, ood_groups_selections=None, return_averaged=True)``
             .. container:: desc
