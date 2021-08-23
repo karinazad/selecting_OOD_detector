@@ -10,8 +10,8 @@ API Reference
       -  .. rubric:: ``OODPipeline``
             :name: oodpipeline
 
-         -  ``evaluate_ood_groups``
          -  ``fit``
+         -  ``evaluate_ood_groups``
          -  ``get_auc_scores``
          -  ``plot_auc_scores``
          -  ``plot_box_plot``
