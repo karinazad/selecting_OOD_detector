@@ -1,9 +1,14 @@
 API Reference
 ####################################
 
-==============================================================
-selecting_OOD_detector.pipeline.ood_pipeline API documentation
-==============================================================
+
+OODPipeline
+*****************
+
+
+``selecting_OOD_detector.pipeline.ood_pipeline API documentation``
+
+
 
 .. contents::
    :depth: 3
