@@ -79,8 +79,8 @@ OOD Pipeline
          -  `BasePipeline <base.html#selecting_OOD_detector.pipeline.base.BasePipeline>`__
 
 
-         .. rubric:: Fit
-            :name: fit
+         .. rubric:: Methods
+            :name: methods
 
          ``def fit(self, X_train, X_test, **kwargs)``
             .. container:: desc
@@ -109,9 +109,7 @@ OOD Pipeline
                ``n_trials``: ``int`` 
                   Number of trials to run.
                   
-                  
-        .. rubric:: Evaluate OOD Groups
-            :name: evaluate_ood_groups 
+                 
                   
          ``def evaluate_ood_groups(self, ood_groups, return_averaged=False)``
             .. container:: desc
@@ -144,6 +142,8 @@ OOD Pipeline
              ``out_domain_scores`` : ``dict``
                   Returns a dictionary of novelty scores given by each
                   model for each sample in every OOD group.
+
+
 
          ``def get_auc_scores(self, ood_groups_selections=None, return_averaged=True)``
             .. container:: desc
