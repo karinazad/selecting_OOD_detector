@@ -4,7 +4,7 @@ About
 ########
 
 
-Why is OOD detection important?
+About OOD Detection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Machine learning models have achieved great performance on variety of
@@ -13,7 +13,7 @@ have been trained on and their performance can degrade rapidly when this
 assumption is violated.
 
 
-Implemented OOD detection methods
+Implemented Models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Autoencoder (``AE``) with reconstruction error metric
@@ -29,7 +29,6 @@ Implemented OOD detection methods
 -  Local Outlier Factor (``LOF``; de Vries et al., 2010) with outlier
    score
    
-  
 
 Authors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
