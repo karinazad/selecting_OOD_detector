@@ -12,6 +12,8 @@ tasks. However, models assume that new samples are similar to data they
 have been trained on and their performance can degrade rapidly when this
 assumption is violated.
 
+.. image:: https://raw.githubusercontent.com/karinazad/selecting_OOD_detector/master/docs/img/Screen%20Shot%202021-08-19%20at%2012.17.46%20PM.png
+
 
 Implemented Models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
