@@ -6,7 +6,7 @@ OODPipeline
 *****************
 
 
-``selecting_OOD_detector.pipeline.ood_pipeline API documentation``
+``selecting_OOD_detector.pipeline.ood_pipeline``
 
 
 
