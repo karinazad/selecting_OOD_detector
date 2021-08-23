@@ -58,7 +58,7 @@ OODPipeline
 
             ``kwargs``
                ``model_selection``: ``set`` Define which models to train, e.g.
-               {"PPCA", "LOF", "VAE"}. If selection is not provided, all
+               ``{"PPCA", "LOF", "VAE"}``. If selection is not provided, all
                available models are used.
 
 
