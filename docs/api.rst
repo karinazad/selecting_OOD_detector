@@ -23,8 +23,11 @@ API Reference
 OODPipeline
 *****************
 
+      .. rubric:: Module
+         :name: header-classes
+         :class: section-title
 
-``selecting_OOD_detector.pipeline.ood_pipeline``
+         ``selecting_OOD_detector.pipeline.ood_pipeline``
 
    .. container:: section
       :name: section-intro
@@ -37,7 +40,7 @@ OODPipeline
 
    .. container:: section
 
-      .. rubric:: Classes
+      .. rubric:: Class
          :name: header-classes
          :class: section-title
 
@@ -62,7 +65,7 @@ OODPipeline
                oodpipeline.evaluate(ood_groups)
 
                # Inspect AUC-ROC scores of detecting OOD groups
-               oodpipeline.get_ood_aucs_scores()
+               oodpipeline.get_auc_scores()
 
             .. rubric:: Parameters
                :name: parameters
