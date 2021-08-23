@@ -75,7 +75,7 @@ OOD groups:
     # Compute novelty scores of the defined OOD groups
     oodpipe.evaluate_ood_groups(ood_groups)
 
-Finally, inspect AUC-ROC score of OOD detection:
+Now we can inspect AUC-ROC score of OOD detection:
 
 .. code:: py
 
@@ -92,6 +92,18 @@ Finally, inspect AUC-ROC score of OOD detection:
 AUC-ROC score of 1 would indicate perfect separation of an OOD group
 from testing data while score of 0.5 suggests that models are unable to
 detect which samples are in- and out-of-distribution.
+
+
+To visualize distributions of novelty scores, plot histogram using `plot_score_distributions` or boxplots using `plot_box_plot` functions:
+
+.. code:: py
+
+    oodpipe.plot_box_plot()
+
+.. image:: https://raw.githubusercontent.com/karinazad/selecting_OOD_detector/master/docs/img/download%20(1).png
+
+.. image:: https://raw.githubusercontent.com/karinazad/selecting_OOD_detector/master/docs/img/download.png
+
 
 Usage
 -----
