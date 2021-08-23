@@ -13,6 +13,8 @@ Out-of-distribution (OOD) detection is one of the crucial safety checks for reli
 
 This repository allows you to test and tailor OOD detection methods to custom dataset and select the best OOD detector for your application.  
 
+.. image:: https://raw.githubusercontent.com/karinazad/selecting_OOD_detector/master/docs/img/1_TyogHTgvJx8mTemKYHJ0cg.png 
+
 Contents:
 
 .. toctree::
