@@ -82,7 +82,6 @@ OOD Pipeline
             :name: methods
 
 
-
          ``def fit(self, X_train, X_test, **kwargs)``
             .. container:: desc
 
@@ -217,6 +216,7 @@ OOD Pipeline
                   each OOD group separately.
 
            
+     .. rubric:: Plot Score Distributions
 
          ``def plot_score_distr(self, ood_groups_selections=None, save_dir=None)``
             .. container:: desc
