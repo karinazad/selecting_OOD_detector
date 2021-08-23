@@ -124,11 +124,14 @@ OODPipeline
                   scores for the dataset and used for comparison against
                   OOD groups later.
 
-               kwargs: y_train: pd.DataFrame Labels corresponding to
-               training data. n_trials: int Number of trials to run.
+              ``kwargs``: 
+               ``y_train``: ``pd.DataFrame`` 
+                  Labels corresponding to training data. 
+               ``n_trial``s: ``int``
+                  Number of trials to run.
 
 
-         ``def get_auc_scores(self, ood_groups_selections: Optional[list] = None, return_averaged: bool = True)``
+         ``def get_auc_scores(self, ood_groups_selections = None, return_averaged = True)``
             .. container:: desc
 
                Computes AUC-ROC scores of OOD detection for each OOD
