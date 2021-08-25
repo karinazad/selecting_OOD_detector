@@ -33,8 +33,12 @@ Implemented OOD detection methods
 -  Local Outlier Factor (``LOF``; de Vries et al., 2010) with outlier
    score
 
+
+Examples
+----------------------
+
 Example of Usage: Under 18 and COVID-19 Patients
-------------------------------------------------
+-----------------------------------------------------------------------
 
 This example shows how to test OOD detectors on two groups using dummy
 variables of \* patients under 18 years \* COVID-19 patients
@@ -105,30 +109,9 @@ To visualize distributions of novelty scores, plot histogram using `plot_score_d
 .. image:: https://raw.githubusercontent.com/karinazad/selecting_OOD_detector/master/docs/img/download.png
 
 
-Usage
------
-
-::
-
-    git clone https://github.com/Giovannicina/selecting_OOD_detector.git 
-    cd selecting_OOD_detector
-    pip install -r requirements.txt
-    sys.path.append(os.getcwd())
-
-Import OOD pipeline and apply to your data as shown in the example
-above:
-
-.. code:: py
-
-    from selecting_OOD_detector.pipeline.ood_pipeline import OODPipeline
-    
-    
-|
-|
-
     
 Fine-Tuning Hyperparmeters on a New Dataset
-*****************************************
+-----------------------------------------------------------------------
 
 This example shows how to perform hyperparameter search for each dataset.
 
@@ -233,7 +216,29 @@ You can save these best parameters and use them in the OODPipeline later:
     # Use the custom hyperparameters that were just saved
     oodpipe.fit(X_train, X_test=X_test, hyperparameters_dir="../data/hyperparameters/custom/")
 
+|
+|
 
+Usage
+-----
+
+::
+
+    git clone https://github.com/Giovannicina/selecting_OOD_detector.git 
+    cd selecting_OOD_detector
+    pip install -r requirements.txt
+    sys.path.append(os.getcwd())
+
+Import OOD pipeline and apply to your data as shown in the example
+above:
+
+.. code:: py
+
+    from selecting_OOD_detector.pipeline.ood_pipeline import OODPipeline
+    
+    
+|
+|
 References
 ----------
 
