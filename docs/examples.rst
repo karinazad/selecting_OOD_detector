@@ -36,6 +36,7 @@ First, define the in-distribution and OOD data:
     ood_groups = {"Patients under 18 years": X_under18,
                   "COVID-19 patients": X_covid}
                   
+|
 
 Next, initialize and fit OOD Pipeline to in-distribution data and score
 OOD groups:
@@ -52,6 +53,8 @@ OOD groups:
 
     # Compute novelty scores of the defined OOD groups
     oodpipe.evaluate_ood_groups(ood_groups)
+
+|
 
 Finally, inspect AUC-ROC score of OOD detection:
 
@@ -71,6 +74,7 @@ AUC-ROC score of 1 would indicate perfect separation of an OOD group
 from testing data while score of 0.5 suggests that models are unable to
 detect which samples are in- and out-of-distribution.
 
+|
 
 To visualize distributions of novelty scores, plot histogram using `plot_score_distributions` or boxplots using `plot_box_plot` functions:
 
@@ -89,13 +93,14 @@ The plot is annotated with the results of Mann-Whitney one-sided statistical tes
 
 |
 |
+|
 
 Fine-Tuning Hyperparmeters on a New Dataset
 *****************************************
 
 This example shows how to perform hyperparameter search for each dataset.
 
-
+|
 First, split your data into training, testing, and validation:
 
 .. code:: py
@@ -112,6 +117,8 @@ First, split your data into training, testing, and validation:
     X_train, X_val, y_train, y_val = train_test_split(X_train, y_train)
 
              
+|
+
 Next, initialize ``HyperparameterTuner``:
 
 .. code:: py
@@ -119,6 +126,8 @@ Next, initialize ``HyperparameterTuner``:
     from selecting_OOD_detector.pipeline.tuner import HyperparameterTuner
 
     hyperparm_tuner = HyperparameterTuner(num_evals_per_model=5)
+
+|
 
 Run the hyperparameter search with the HyperparameterTuner. Note that intermediate results can be saved during the run:
 
@@ -133,7 +142,9 @@ Run the hyperparameter search with the HyperparameterTuner. Note that intermedia
                                              )
 
 
-To get the best parameters, simply use `get_best_parameters` function:
+|
+
+To get the best parameters, simply use ``get_best_parameters`` function:
 
 .. code:: py
     
@@ -172,6 +183,7 @@ To get the best parameters, simply use `get_best_parameters` function:
                      'reconstr_error_weight': 0.14695309349947033}
          }
     
+|
 You can save these best parameters and use them in the OODPipeline later:
 
 
