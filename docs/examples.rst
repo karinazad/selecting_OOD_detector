@@ -5,6 +5,7 @@ Examples
 .. contents::
    :depth: 3
 ..
+
 |
 
 Detecting Clinically Relevant OOD Groups
@@ -100,7 +101,7 @@ Fine-Tuning Hyperparmeters on a New Dataset
 
 This example shows how to perform hyperparameter search for each dataset.
 
-|
+
 First, split your data into training, testing, and validation:
 
 .. code:: py
