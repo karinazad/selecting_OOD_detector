@@ -1,7 +1,9 @@
 ##########
 Examples
 ##########
-|
+This page shows examples of how to use ``OODPipeline`` and ``HyperparameterTuner`` for your applications.
+
+
 .. contents::
    :depth: 3
 ..
@@ -184,7 +186,7 @@ To get the best parameters, simply use ``get_best_parameters`` function:
          }
     
 |
-You can save these best parameters and use them in the OODPipeline later:
+You can save these best parameters and use them in ``OODPipeline`` later:
 
 
 .. code:: py
@@ -201,6 +203,9 @@ You can save these best parameters and use them in the OODPipeline later:
 
     # Use the custom hyperparameters that were just saved
     oodpipe.fit(X_train, X_test=X_test, hyperparameters_dir="../data/hyperparameters/custom/")
+    
+    
+This way, the OOD detection models used by ``OODPipeline`` are fine-tuned to your dataset.
 
 
 
