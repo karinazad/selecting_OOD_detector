@@ -1,7 +1,7 @@
 API Reference
 ####################################
 
-version 9 
+version 10
 
 .. contents::
    :depth: 3
@@ -126,7 +126,7 @@ OOD Pipeline
                            Number of independent trials to run, default is set to 5. All subsequent results will be averaged from the indicated number of runs. 
                            
          |
-         |              
+          
                   
          ``def evaluate_ood_groups(self, ood_groups, return_averaged=False)``
             .. container:: desc
@@ -161,7 +161,7 @@ OOD Pipeline
                   model for each sample in every OOD group.
 
          |
-         |
+
 
          ``def get_auc_scores(self, ood_groups_selections=None, return_averaged=True)``
             .. container:: desc
@@ -192,7 +192,7 @@ OOD Pipeline
                   averaged) or a list of AUC-ROC scores.
 
          |
-         |            
+        
 
 
          ``def plot_auc_scores(self, ood_groups_selections=None, show_stderr=True, save_dir=None, **plot_kwargs)``
@@ -222,7 +222,7 @@ OOD Pipeline
 
       
          |
-         |
+
          
          ``def plot_box_plot(self, ood_groups_selections=None, save_dir=None)``
             .. container:: desc
@@ -250,7 +250,7 @@ OOD Pipeline
                   
       
          |
-         |
+
          ``def plot_score_distr(self, ood_groups_selections=None, save_dir=None)``
             .. container:: desc
             
@@ -342,12 +342,12 @@ Hyperparameter Tuner
                selectio is provided, evaluates all implemented models.
             ``num_evals_per_model`` : ``int``
                Number of evaluations to run for each model.
+                 
 
+         |
          .. rubric:: Methods
             :name: methods
             
-         .. rubric:: ``run_hyperparameter_search``
-            :name:function_title
 
          ``def run_hyperparameter_search(self, X_train, X_val, y_train=None, y_val=None, save_intermediate_scores=True, save_dir=None)``
             .. container:: desc
@@ -378,12 +378,11 @@ Hyperparameter Tuner
                   saves the results to
                   "../data/hyperparameters/scores/")
 
-         |
+
          |
          
-         .. rubric:: ``get_best_parameters``
-            :name:function_title         
-         
+
+
          ``def get_best_parameteres(self)``
             .. container:: desc
 
@@ -399,7 +398,7 @@ Hyperparameter Tuner
                   found for each model.
 
             
-         |
+
          |
 
          ``def save_best_parameters_as_json(self, save_dir=None)``
@@ -417,7 +416,7 @@ Hyperparameter Tuner
                   provided, saves the paramaters to:
                   "../data/hyperparameters/custom/"
 
-         |
+
          |
 
          ``def save_scores_for_evaluated_paramaters(self, save_dir=None)``
