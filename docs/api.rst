@@ -1,7 +1,7 @@
 API Reference
 ####################################
 
-version 7
+version 8
 
 .. contents::
    :depth: 3
@@ -311,14 +311,14 @@ Hyperparameter Tuner
             ::
 
                # Initialize the hyperparameter tuner
-               hyperparm_tuner = HyperparameterTuner()
+               hyperparam_tuner = HyperparameterTuner()
 
                # Run hyperparameter search on your data
-               hyperparm_tuner.run_hyperparameter_search(X_train= X_train, X_val=X_val)
+               hyperparam_tuner.run_hyperparameter_search(X_train= X_train, X_val=X_val)
 
                # Display or save the best hyperparameters found
-               hyperparm_tuner.get_best_parameteres()
-               hyperparm_tuner.save_best_parameters_as_json(save_dir="search_results/")
+               hyperparam_tuner.get_best_parameteres()
+               hyperparam_tuner.save_best_parameters_as_json(save_dir="search_results/")
                
 
             .. rubric:: Parameters
