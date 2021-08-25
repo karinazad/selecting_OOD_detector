@@ -1,6 +1,11 @@
 Selecting OOD Detector
 ======================
 
+.. contents::
+   :depth: 3
+..
+
+
 Out-of-distribution (OOD) detection is one of the crucial safety checks
 for reliable deployment of machine learning models. However, while it is
 a standard practice to tailor predictive models to a specific task,
