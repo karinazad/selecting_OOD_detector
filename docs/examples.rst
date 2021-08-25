@@ -139,10 +139,9 @@ To get the best parameters, simply use `get_best_parameters` function:
     
     hyperparm_tuner.get_best_parameteres()
     
-    
+ 
 .. code:: py
 
-    >>>out:
         {
         'AE': {   'hyperparameters': {   'hidden_sizes': [75, 75, 75],
                                          'input_size': 32,
