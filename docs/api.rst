@@ -17,6 +17,14 @@ API Reference
          -  ``plot_box_plot``
          -  ``plot_score_distr``
          
+         
+      -  .. rubric:: ``HyperparameterTuner``
+            :name: hyperparametertuner
+
+         -  ``get_best_parameteres``
+         -  ``run_hyperparameter_search``
+         -  ``save_best_parameters_as_json``
+         -  ``save_scores_for_evaluated_paramaters``
 
 
 
@@ -249,6 +257,142 @@ OOD Pipeline
                   If a path to a directory is provided, saves plots for
                   each OOD group separately.
                   
+
+
+Hyperparameter Tuner
+*****************
+
+selecting_OOD_detector.pipeline.tuner 
+
+.. contents::
+   :depth: 3
+..
+
+.. container::
+
+   .. container:: section
+      :name: section-intro
+
+      This module implements HyperparameterTuner which performs
+      hyperparameter search for density estimators and discriminators.
+      
+   .. container:: section
+
+   .. container:: section
+
+   .. container:: section
+
+   .. container:: section
+
+      .. rubric:: Classes
+         :name: header-classes
+         :class: section-title
+
+      ``class HyperparameterTuner (hyperparameter_search_grid: dict = {'kernel': ['RFB', 'Matern12', 'Matern32', 'Matern52', 'RQ'], 'n_inducing_points': range(10, 20), 'num_layers': range(5, 40, 5), 'hidden_features': [32, 64, 128, 256, 512], 'batch_norm_between_layers': [True, False], 'coeff': [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4], 'features': [64, 128, 256, 512, 1028], 'depth': range(4, 8), 'n_components': range(2, 20), 'n_neighbors': range(2, 20), 'hidden_sizes': [[25], [25, 25], [25, 25, 25], [30], [30, 30], [30, 30, 30], [50], [50, 50], [50, 50, 50], [75], [75, 75], [75, 75, 75], [100], [100, 100], [100, 100, 100]], 'latent_dim': [5, 10, 15, 20], 'batch_size': [64, 128, 256], 'lr': [0.0001, 0.001, 0.01, 0.1], 'dropout_rate': [0, 0.1, 0.2, 0.3, 0.5], 'reconstr_error_weight': <scipy.stats._distn_infrastructure.rv_frozen object>, 'anneal': [True, False], 'beta': <scipy.stats._distn_infrastructure.rv_frozen object>}, hyperparameters_names: dict = {'AE': ['hidden_sizes', 'latent_dim', 'lr'], 'DUE': ['coeff', 'depth', 'features', 'kernel', 'lr', 'n_inducing_points'], 'Flow': ['hidden_features', 'num_layers', 'batch_norm_between_layers', 'lr'], 'LOF': ['n_neighbors'], 'PPCA': ['n_components'], 'VAE': ['anneal', 'beta', 'hidden_sizes', 'latent_dim', 'lr', 'reconstr_error_weight']}, train_params: dict = None, model_selection: Optional[set] = None, num_evals_per_model: int = 20)``
+         .. container:: desc
+
+            Performs hyperparameter search for implemented novelty
+            estimators and provided data.
+
+            .. rubric:: Parameters
+               :name: parameters
+
+            **``hyperparameter_search_grid``** : ``dict``
+               A dictionary that specifies all possible values of
+               hyperparameters for all models to be evaluated. Example:
+               {"kernel": ["RFB", "Matern12", "Matern32", "Matern52",
+               "RQ"], "n_inducing_points": range(10, 20)}
+            **``hyperparameters_names``** : ``dict[list]``
+               A dictionary of lists with strings that specifies the
+               names of parameters that each model uses for
+               initialization. Example: {"AE": ["hidden_sizes",
+               "latent_dim", "lr"], "PPCA": ["n_components"]}
+            **``train_params``** : ``dict``
+               A dictionary that specifies hyperparameters used in the
+               training function.
+            **``model_selection``** : ``Optional(set)``
+               Specifies a subset of models to be evaluated. If no
+               selectio is provided, evaluates all implemented models.
+            **``num_evals_per_model``** : ``int``
+               Number of evaluations to run for each model.
+
+   
+         .. rubric:: Methods
+            :name: methods
+
+         ``def get_best_parameteres(self)``
+            .. container:: desc
+
+               Returns the top performing paramaters for each model in a
+               nested dictionary. Returns
+
+               --------------
+
+               **``best_params``** : ``dict``
+                  A nested dictionary that stores the best parameters
+                  found for each model.
+
+
+
+         ``def run_hyperparameter_search(self, X_train: pandas.core.frame.DataFrame, X_val: pandas.core.frame.DataFrame, y_train: pandas.core.frame.DataFrame = None, y_val: pandas.core.frame.DataFrame = None, save_intermediate_scores: bool = True, save_dir: Optional[str] = None)``
+            .. container:: desc
+
+               Performs hyperparameters search for all models and stores
+               the results internally. Parameters
+
+               --------------
+
+               **``X_train``** : ``pd.DataFrame``
+                  Training data.
+               **``X_val``** : ``pd.DataFrame``
+                  Validation data to calculate scores on.
+               **``y_train``** : ``Optional(pd.DataFrame):``
+                  Labels corresponding to the training data. Only used
+                  for discriminator models.
+               **``y_val``** : ``Optional(pd.DataFrame)``
+                  Labels corresponding to the validation data. Only used
+                  for discriminator models.
+               **``save_intermediate_scores``** : ``bool``
+                  If True, saves results after each run in case of an
+                  abrupt termination of the run.
+               **``save_dir``** : ``Optional(str)``
+                  If save_intermediate_scores is True, saves the results
+                  to provided directory. If no directory is provided,
+                  saves the results to
+                  "../data/hyperparameters/scores/")
+
+            
+
+
+         ``def save_best_parameters_as_json(self, save_dir: Optional[str] = None)``
+            .. container:: desc
+
+               Saves the top performing paramaters for each model in a
+               nested dictionary. Parameters
+
+               --------------
+
+               **``save_dir``** : ``Optional(str)``
+                  Directory to save the results to. If no directory is
+                  provided, saves the paramaters to:
+                  "../data/hyperparameters/custom/"
+
+           
+
+         ``def save_scores_for_evaluated_paramaters(self, save_dir: Optional[str] = None)``
+            .. container:: desc
+
+               Saves scores for all evaluated parameters for each model.
+               Parameters
+
+               --------------
+
+               **``save_dir``** : ``Optional(str)``
+                  Directory to save the results to. If no directory is
+                  provided, saves the paramaters to:
+                  "../data/hyperparameters/scores/")
+
+           
 
 
 Generated by `pdoc 0.10.0 <https://pdoc3.github.io/pdoc>`__.
