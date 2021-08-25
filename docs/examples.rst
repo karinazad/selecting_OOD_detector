@@ -138,8 +138,7 @@ Run the hyperparameter search with the HyperparameterTuner. Note that intermedia
                                               y_train=y_train,
                                               y_val=y_val,
                                               save_intermediate_scores=True,
-                                              save_dir="hyperparameter_search_test/"
-                                             )
+                                              save_dir="hyperparameter_search_test/")
 
 
 |
