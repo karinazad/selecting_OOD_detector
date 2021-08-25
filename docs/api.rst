@@ -1,6 +1,7 @@
 API Reference
 ####################################
 
+version 5
 
 .. contents::
    :depth: 3
@@ -8,7 +9,7 @@ API Reference
       
 .. container::
 
-   -  .. rubric:: `Classes <#header-classes>`__
+   -  .. rubric:: ``Classes``
          :name: classes
 
       -  .. rubric:: ``OODPipeline``
@@ -338,7 +339,7 @@ selecting_OOD_detector.pipeline.tuner
             .. container:: desc
 
                Performs hyperparameters search for all models and stores
-               the results internally. Parameters
+               the results internally. 
 
 
                .. rubric:: Parameters
@@ -373,8 +374,8 @@ selecting_OOD_detector.pipeline.tuner
                nested dictionary. Returns
 
                
-            .. rubric:: Parameters
-               :name: parameters
+               .. rubric:: Parameters
+                  :name: parameters
                
                ``best_params``: ``dict``
                   A nested dictionary that stores the best parameters
@@ -391,8 +392,8 @@ selecting_OOD_detector.pipeline.tuner
                nested dictionary. Parameters
 
                
-            .. rubric:: Parameters
-               :name: parameters
+               .. rubric:: Parameters
+                  :name: parameters
                
                ``save_dir`` : ``Optional(str)``
                   Directory to save the results to. If no directory is
@@ -409,8 +410,8 @@ selecting_OOD_detector.pipeline.tuner
                Parameters
 
 
-            .. rubric:: Parameters
-               :name: parameters
+               .. rubric:: Parameters
+                  :name: parameters
                
                ``save_dir`` : ``Optional(str)``
                   Directory to save the results to. If no directory is
