@@ -120,13 +120,6 @@ Next, initialize ``HyperparameterTuner``:
 
     hyperparm_tuner = HyperparameterTuner(num_evals_per_model=5)
 
-    hyperparm_tuner.run_hyperparameter_search(X_train = X_train,
-                                              X_val=X_val,
-                                              y_train=y_train,
-                                              y_val=y_val,
-                                              save_intermediate_scores=True,
-                                              save_dir="hyperparameter_search_test/"
-                                             )
 Run the hyperparameter search with the HyperparameterTuner. Note that intermediate results can be saved during the run:
 
 .. code:: py
@@ -150,37 +143,33 @@ To get the best parameters, simply use `get_best_parameters` function:
 .. code:: py
 
         {
-        'AE': {   'hyperparameters': {   'hidden_sizes': [75, 75, 75],
-                                         'input_size': 32,
-                                         'latent_dim': 15,
-                                         'lr': 0.01},
-                  'score': -0.08429349213838577},
-        'DUE': {   'hyperparameters': {   'coeff': 1.5,
-                                          'depth': 6,
-                                          'features': 256,
-                                          'input_size': 32,
-                                          'kernel': 'RQ',
-                                          'lr': 0.001,
-                                          'n_inducing_points': 16},
-                   'score': 0.4230769230769231},
-        'Flow': {   'hyperparameters': {   'batch_norm_between_layers': True,
-                                           'hidden_features': 32,
-                                           'input_size': 32,
-                                           'lr': 0.001,
-                                           'num_layers': 5},
-                    'score': -8.092469215393066},
-        'LOF': {   'hyperparameters': {'input_size': 32, 'n_neighbors': 19},
-                   'score': -1.0095922293505117},
-        'PPCA': {   'hyperparameters': {'input_size': 32, 'n_components': 4},
-                    'score': -6.744900826462926},
-        'VAE': {   'hyperparameters': {   'anneal': False,
-                                          'beta': 1.5364634757062774,
-                                          'hidden_sizes': [100, 100, 100],
-                                          'input_size': 32,
-                                          'latent_dim': 15,
-                                          'lr': 0.01,
-                                          'reconstr_error_weight': 0.748872286941835},
-                   'score': -10.116865158081055}
+          'AE': {   'hidden_sizes': [50, 50],
+                    'input_size': 32,
+                    'latent_dim': 15,
+                    'lr': 0.01},
+          'DUE': {   'coeff': 1,
+                     'depth': 4,
+                     'features': 512,
+                     'input_size': 32,
+                     'kernel': 'Matern52',
+                     'lr': 0.1,
+                     'n_inducing_points': 11},
+          'Flow': {   'batch_norm_between_layers': True,
+                      'hidden_features': 128,
+                      'input_size': 32,
+                      'lr': 0.01,
+                      'num_layers': 15},
+          'LOF': {    'input_size': 32, 
+                      'n_neighbors': 19},
+          'PPCA': {  'input_size': 32,
+                     'n_components': 3},
+          'VAE': {   'anneal': True,
+                     'beta': 1.786466646725514,
+                     'hidden_sizes': [30, 30, 30],
+                     'input_size': 32,
+                     'latent_dim': 5,
+                     'lr': 0.1,
+                     'reconstr_error_weight': 0.14695309349947033}
          }
     
 You can save these best parameters and use them in the OODPipeline later:
