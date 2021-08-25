@@ -1,7 +1,7 @@
 API Reference
 ####################################
 
-version 5
+version 7
 
 .. contents::
    :depth: 3
@@ -279,9 +279,6 @@ Hyperparameter Tuner
 ``selecting_OOD_detector.pipeline.tuner.HyperparameterTuner``
 
 
-selecting_OOD_detector.pipeline.tuner 
-
-
 .. container::
 
    .. container:: section
@@ -302,7 +299,7 @@ selecting_OOD_detector.pipeline.tuner
          :name: header-classes
          :class: section-title
 
-      
+      :code:`class HyperparameterTuner (hyperparameter_search_grid=None, hyperparameters_names=None, train_params=None, model_selection=None,              num_evals_per_model=20)`
       ``class HyperparameterTuner (hyperparameter_search_grid=None, hyperparameters_names=None, train_params=None, model_selection=None, num_evals_per_model=20)``
          .. container:: desc
 
