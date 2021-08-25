@@ -1,6 +1,8 @@
 API Reference
 ####################################
 
+Version 1
+
          
 .. container::
 
@@ -260,7 +262,10 @@ OOD Pipeline
 
 
 Hyperparameter Tuner
-*****************
+********************
+
+``selecting_OOD_detector.pipeline.tuner.HyperparameterTuner``
+
 
 selecting_OOD_detector.pipeline.tuner 
 
