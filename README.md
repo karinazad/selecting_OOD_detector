@@ -5,6 +5,18 @@ Out-of-distribution (OOD) detection is one of the crucial safety checks for reli
 
 This repository allows you to test and tailor OOD detection methods to custom dataset and select the best OOD detector for your application.  
 
+## Table of Contents
+- [Selecting OOD Detector](#selecting-ood-detector)
+  * [About](#about)
+    + [Why is OOD detection important?](#why-is-ood-detection-important-)
+    + [Implemented OOD detection methods](#implemented-ood-detection-methods)
+  * [Examples](#examples)
+    + [Detecting Clinically Relevant OOD Groups](#detecting-clinically-relevant-ood-groups)
+    + [Fine-Tuning Hyperparmeters on a New Dataset](#fine-tuning-hyperparmeters-on-a-new-dataset)
+  * [Usage](#usage)
+  * [References](#references)
+
+
 ## About
 
 ### Why is OOD detection important?
