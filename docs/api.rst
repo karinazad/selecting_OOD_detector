@@ -1,13 +1,13 @@
 API Reference
 ####################################
 
-Version 3
+Version 4
 
 .. contents::
    :depth: 3
 ..
 
-         
+|        
 .. container::
 
    -  .. rubric:: `Classes <#header-classes>`__
@@ -27,12 +27,14 @@ Version 3
       -  .. rubric:: ``HyperparameterTuner``
             :name: hyperparametertuner
 
-         -  ``get_best_parameteres``
          -  ``run_hyperparameter_search``
+         -  ``get_best_parameteres``
          -  ``save_best_parameters_as_json``
          -  ``save_scores_for_evaluated_paramaters``
          
 
+|
+|
 
 OOD Pipeline
 *****************
@@ -263,7 +265,8 @@ OOD Pipeline
                   If a path to a directory is provided, saves plots for
                   each OOD group separately.
                   
-
+|
+|
 
 Hyperparameter Tuner
 ********************
@@ -323,22 +326,10 @@ selecting_OOD_detector.pipeline.tuner
             ``num_evals_per_model`` : ``int``
                Number of evaluations to run for each model.
 
-   
+         |
+         |
          .. rubric:: Methods
             :name: methods
-
-         ``def get_best_parameteres(self)``
-            .. container:: desc
-
-               Returns the top performing paramaters for each model in a
-               nested dictionary. Returns
-
-               --------------
-
-               ``best_params``: ``dict``
-                  A nested dictionary that stores the best parameters
-                  found for each model.
-
 
 
          ``def run_hyperparameter_search(self, X_train, X_val, y_train=None, y_val=None, save_intermediate_scores=True, save_dir=None)``
@@ -368,8 +359,24 @@ selecting_OOD_detector.pipeline.tuner
                   saves the results to
                   "../data/hyperparameters/scores/")
 
-            
+         |
+         |
+         
+         ``def get_best_parameteres(self)``
+            .. container:: desc
 
+               Returns the top performing paramaters for each model in a
+               nested dictionary. Returns
+
+               --------------
+
+               ``best_params``: ``dict``
+                  A nested dictionary that stores the best parameters
+                  found for each model.
+
+            
+         |
+         |
 
          ``def save_best_parameters_as_json(self, save_dir=None)``
             .. container:: desc
@@ -384,7 +391,8 @@ selecting_OOD_detector.pipeline.tuner
                   provided, saves the paramaters to:
                   "../data/hyperparameters/custom/"
 
-           
+         |
+         |
 
          ``def save_scores_for_evaluated_paramaters(self, save_dir=None)``
             .. container:: desc
