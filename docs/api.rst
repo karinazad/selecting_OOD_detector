@@ -308,6 +308,21 @@ selecting_OOD_detector.pipeline.tuner
 
             Performs hyperparameter search for implemented novelty
             estimators and provided data.
+            
+            Example of usage:
+
+            ::
+
+               # Initialize the hyperparameter tuner
+               hyperparm_tuner = HyperparameterTuner()
+
+               # Run hyperparameter search on your data
+               hyperparm_tuner.run_hyperparameter_search(X_train= X_train, X_val=X_val)
+
+               # Display or save the best hyperparameters found
+               hyperparm_tuner.get_best_parameteres()
+               hyperparm_tuner.save_best_parameters_as_json(save_dir="search_results/")
+               
 
             .. rubric:: Parameters
                :name: parameters
@@ -334,7 +349,7 @@ selecting_OOD_detector.pipeline.tuner
          .. rubric:: Methods
             :name: methods
 
-
+         :code:`def run_hyperparameter_search(self, X_train, X_val, y_train=None, y_val=None, save_intermediate_scores=True, save_dir=None)`
          ``def run_hyperparameter_search(self, X_train, X_val, y_train=None, y_val=None, save_intermediate_scores=True, save_dir=None)``
             .. container:: desc
 
