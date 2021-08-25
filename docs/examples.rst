@@ -79,3 +79,121 @@ To visualize distributions of novelty scores, plot histogram using `plot_score_d
 
 
 The plot is annotated with the results of Mann-Whitney one-sided statistical test from ``statannot``.
+
+
+
+
+Fine-Tuning Hyperparmeters on a New Dataset
+*****************************************
+
+This example shows how to perform hyperparameter search for each dataset.
+
+
+First, split your data into training, testing, and validation:
+
+.. code:: py
+
+    import pandas as pd
+    from sklearn.model_selection import train_test_split
+
+    n_features = 32
+    n_samples = 150
+    X = pd.DataFrame(np.random.rand(n_samples, n_features))
+    y = np.random.binomial(n=1, p=0.95, size=[n_samples])
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y)
+    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train)
+
+             
+Next, initialize ``HyperparameterTuner``:
+
+.. code:: py
+
+    from selecting_OOD_detector.pipeline.tuner import HyperparameterTuner
+
+    hyperparm_tuner = HyperparameterTuner(num_evals_per_model=5)
+
+    hyperparm_tuner.run_hyperparameter_search(X_train = X_train,
+                                              X_val=X_val,
+                                              y_train=y_train,
+                                              y_val=y_val,
+                                              save_intermediate_scores=True,
+                                              save_dir="hyperparameter_search_test/"
+                                             )
+Run the hyperparameter search with the HyperparameterTuner. Note that intermediate results can be saved during the run:
+
+.. code:: py
+
+    hyperparm_tuner.run_hyperparameter_search(X_train = X_train,
+                                              X_val=X_val,
+                                              y_train=y_train,
+                                              y_val=y_val,
+                                              save_intermediate_scores=True,
+                                              save_dir="hyperparameter_search_test/"
+                                             )
+
+
+To get the best parameters, simply use `get_best_parameters` function:
+
+.. code:: py
+    
+    hyperparm_tuner.get_best_parameteres()
+    
+    
+.. code:: py
+
+    >>>out:
+        {
+        'AE': {   'hyperparameters': {   'hidden_sizes': [75, 75, 75],
+                                         'input_size': 32,
+                                         'latent_dim': 15,
+                                         'lr': 0.01},
+                  'score': -0.08429349213838577},
+        'DUE': {   'hyperparameters': {   'coeff': 1.5,
+                                          'depth': 6,
+                                          'features': 256,
+                                          'input_size': 32,
+                                          'kernel': 'RQ',
+                                          'lr': 0.001,
+                                          'n_inducing_points': 16},
+                   'score': 0.4230769230769231},
+        'Flow': {   'hyperparameters': {   'batch_norm_between_layers': True,
+                                           'hidden_features': 32,
+                                           'input_size': 32,
+                                           'lr': 0.001,
+                                           'num_layers': 5},
+                    'score': -8.092469215393066},
+        'LOF': {   'hyperparameters': {'input_size': 32, 'n_neighbors': 19},
+                   'score': -1.0095922293505117},
+        'PPCA': {   'hyperparameters': {'input_size': 32, 'n_components': 4},
+                    'score': -6.744900826462926},
+        'VAE': {   'hyperparameters': {   'anneal': False,
+                                          'beta': 1.5364634757062774,
+                                          'hidden_sizes': [100, 100, 100],
+                                          'input_size': 32,
+                                          'latent_dim': 15,
+                                          'lr': 0.01,
+                                          'reconstr_error_weight': 0.748872286941835},
+                   'score': -10.116865158081055}
+         }
+    
+You can save these best parameters and use them in the OODPipeline later:
+
+
+.. code:: py
+
+    tuner.save_best_parameters_as_json(save_dir = "../data/hyperparameters/custom/")
+    
+    
+.. code:: py
+
+    from selecting_OOD_detector.pipeline.ood_pipeline import OODPipeline
+
+    # Initialize the pipeline
+    oodpipe = OODPipeline()
+
+    # Use the custom hyperparameters that were just saved
+    oodpipe.fit(X_train, X_test=X_test, hyperparameters_dir="../data/hyperparameters/custom/")
+
+
+
