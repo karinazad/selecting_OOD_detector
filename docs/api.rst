@@ -1,7 +1,7 @@
 API Reference
 ####################################
 
-Version 1
+Version 3
 
 .. contents::
    :depth: 3
