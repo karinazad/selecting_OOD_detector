@@ -1,6 +1,11 @@
 ##########
 Examples
 ##########
+|
+.. contents::
+   :depth: 3
+..
+|
 
 Detecting Clinically Relevant OOD Groups
 *****************************************
@@ -82,6 +87,8 @@ The plot is annotated with the results of Mann-Whitney one-sided statistical tes
 
 
 
+|
+|
 
 Fine-Tuning Hyperparmeters on a New Dataset
 *****************************************
