@@ -299,7 +299,7 @@ Hyperparameter Tuner
          :name: header-classes
          :class: section-title
 
-      :code:`class HyperparameterTuner (hyperparameter_search_grid=None, hyperparameters_names=None, train_params=None, model_selection=None,              num_evals_per_model=20)`
+
       ``class HyperparameterTuner (hyperparameter_search_grid=None, hyperparameters_names=None, train_params=None, model_selection=None, num_evals_per_model=20)``
          .. container:: desc
 
@@ -345,8 +345,10 @@ Hyperparameter Tuner
 
          .. rubric:: Methods
             :name: methods
+            
+         .. rubric:: ``run_hyperparameter_search``
+            :name:function_title
 
-         :code:`def run_hyperparameter_search(self, X_train, X_val, y_train=None, y_val=None, save_intermediate_scores=True, save_dir=None)`
          ``def run_hyperparameter_search(self, X_train, X_val, y_train=None, y_val=None, save_intermediate_scores=True, save_dir=None)``
             .. container:: desc
 
@@ -378,6 +380,9 @@ Hyperparameter Tuner
 
          |
          |
+         
+         .. rubric:: ``get_best_parameters``
+            :name:function_title         
          
          ``def get_best_parameteres(self)``
             .. container:: desc
