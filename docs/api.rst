@@ -1,13 +1,11 @@
 API Reference
 ####################################
 
-Version 4
 
 .. contents::
    :depth: 3
 ..
-
-|        
+      
 .. container::
 
    -  .. rubric:: `Classes <#header-classes>`__
@@ -34,7 +32,7 @@ Version 4
          
 
 |
-|
+
 
 OOD Pipeline
 *****************
@@ -126,7 +124,8 @@ OOD Pipeline
                   ``n_trials``: ``int`` 
                            Number of independent trials to run, default is set to 5. All subsequent results will be averaged from the indicated number of runs. 
                            
-                
+         |
+         |              
                   
          ``def evaluate_ood_groups(self, ood_groups, return_averaged=False)``
             .. container:: desc
@@ -160,7 +159,8 @@ OOD Pipeline
                   Returns a dictionary of novelty scores given by each
                   model for each sample in every OOD group.
 
-
+         |
+         |
 
          ``def get_auc_scores(self, ood_groups_selections=None, return_averaged=True)``
             .. container:: desc
@@ -190,7 +190,8 @@ OOD Pipeline
                   name of novelty estimator and either a float (if
                   averaged) or a list of AUC-ROC scores.
 
-            
+         |
+         |            
 
 
          ``def plot_auc_scores(self, ood_groups_selections=None, show_stderr=True, save_dir=None, **plot_kwargs)``
@@ -219,7 +220,9 @@ OOD Pipeline
                   Other arguments to be passed to sns.heatmap function.
 
       
-
+         |
+         |
+         
          ``def plot_box_plot(self, ood_groups_selections=None, save_dir=None)``
             .. container:: desc
             
@@ -245,7 +248,8 @@ OOD Pipeline
                   each OOD group separately.
                   
       
-
+         |
+         |
          ``def plot_score_distr(self, ood_groups_selections=None, save_dir=None)``
             .. container:: desc
             
@@ -326,8 +330,6 @@ selecting_OOD_detector.pipeline.tuner
             ``num_evals_per_model`` : ``int``
                Number of evaluations to run for each model.
 
-         |
-         |
          .. rubric:: Methods
             :name: methods
 
@@ -338,7 +340,9 @@ selecting_OOD_detector.pipeline.tuner
                Performs hyperparameters search for all models and stores
                the results internally. Parameters
 
-               --------------
+
+               .. rubric:: Parameters
+                  :name: parameters               
 
                ``X_train`` : ``pd.DataFrame``
                   Training data.
@@ -368,8 +372,10 @@ selecting_OOD_detector.pipeline.tuner
                Returns the top performing paramaters for each model in a
                nested dictionary. Returns
 
-               --------------
-
+               
+            .. rubric:: Parameters
+               :name: parameters
+               
                ``best_params``: ``dict``
                   A nested dictionary that stores the best parameters
                   found for each model.
@@ -384,8 +390,10 @@ selecting_OOD_detector.pipeline.tuner
                Saves the top performing paramaters for each model in a
                nested dictionary. Parameters
 
-               --------------
-
+               
+            .. rubric:: Parameters
+               :name: parameters
+               
                ``save_dir`` : ``Optional(str)``
                   Directory to save the results to. If no directory is
                   provided, saves the paramaters to:
@@ -400,8 +408,10 @@ selecting_OOD_detector.pipeline.tuner
                Saves scores for all evaluated parameters for each model.
                Parameters
 
-               --------------
 
+            .. rubric:: Parameters
+               :name: parameters
+               
                ``save_dir`` : ``Optional(str)``
                   Directory to save the results to. If no directory is
                   provided, saves the paramaters to:
