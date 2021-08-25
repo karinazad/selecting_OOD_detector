@@ -3,6 +3,10 @@ API Reference
 
 Version 1
 
+.. contents::
+   :depth: 3
+..
+
          
 .. container::
 
@@ -27,7 +31,7 @@ Version 1
          -  ``run_hyperparameter_search``
          -  ``save_best_parameters_as_json``
          -  ``save_scores_for_evaluated_paramaters``
-
+         
 
 
 OOD Pipeline
@@ -269,9 +273,6 @@ Hyperparameter Tuner
 
 selecting_OOD_detector.pipeline.tuner 
 
-.. contents::
-   :depth: 3
-..
 
 .. container::
 
@@ -293,7 +294,8 @@ selecting_OOD_detector.pipeline.tuner
          :name: header-classes
          :class: section-title
 
-      ``class HyperparameterTuner (hyperparameter_search_grid: dict = {'kernel': ['RFB', 'Matern12', 'Matern32', 'Matern52', 'RQ'], 'n_inducing_points': range(10, 20), 'num_layers': range(5, 40, 5), 'hidden_features': [32, 64, 128, 256, 512], 'batch_norm_between_layers': [True, False], 'coeff': [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4], 'features': [64, 128, 256, 512, 1028], 'depth': range(4, 8), 'n_components': range(2, 20), 'n_neighbors': range(2, 20), 'hidden_sizes': [[25], [25, 25], [25, 25, 25], [30], [30, 30], [30, 30, 30], [50], [50, 50], [50, 50, 50], [75], [75, 75], [75, 75, 75], [100], [100, 100], [100, 100, 100]], 'latent_dim': [5, 10, 15, 20], 'batch_size': [64, 128, 256], 'lr': [0.0001, 0.001, 0.01, 0.1], 'dropout_rate': [0, 0.1, 0.2, 0.3, 0.5], 'reconstr_error_weight': <scipy.stats._distn_infrastructure.rv_frozen object>, 'anneal': [True, False], 'beta': <scipy.stats._distn_infrastructure.rv_frozen object>}, hyperparameters_names: dict = {'AE': ['hidden_sizes', 'latent_dim', 'lr'], 'DUE': ['coeff', 'depth', 'features', 'kernel', 'lr', 'n_inducing_points'], 'Flow': ['hidden_features', 'num_layers', 'batch_norm_between_layers', 'lr'], 'LOF': ['n_neighbors'], 'PPCA': ['n_components'], 'VAE': ['anneal', 'beta', 'hidden_sizes', 'latent_dim', 'lr', 'reconstr_error_weight']}, train_params: dict = None, model_selection: Optional[set] = None, num_evals_per_model: int = 20)``
+      
+      ``class HyperparameterTuner (hyperparameter_search_grid=None, hyperparameters_names=None, train_params=None, model_selection=None, num_evals_per_model=20)``
          .. container:: desc
 
             Performs hyperparameter search for implemented novelty
@@ -302,23 +304,23 @@ selecting_OOD_detector.pipeline.tuner
             .. rubric:: Parameters
                :name: parameters
 
-            **``hyperparameter_search_grid``** : ``dict``
+            ``hyperparameter_search_grid`` : ``Optional(dict)``
                A dictionary that specifies all possible values of
                hyperparameters for all models to be evaluated. Example:
                {"kernel": ["RFB", "Matern12", "Matern32", "Matern52",
                "RQ"], "n_inducing_points": range(10, 20)}
-            **``hyperparameters_names``** : ``dict[list]``
+            ``hyperparameters_names`` : ``Optional(dict)``
                A dictionary of lists with strings that specifies the
                names of parameters that each model uses for
                initialization. Example: {"AE": ["hidden_sizes",
                "latent_dim", "lr"], "PPCA": ["n_components"]}
-            **``train_params``** : ``dict``
+            ``train_params`` : ``Optional(dict)``
                A dictionary that specifies hyperparameters used in the
                training function.
-            **``model_selection``** : ``Optional(set)``
+            ``model_selection`` : ``Optional(set)``
                Specifies a subset of models to be evaluated. If no
                selectio is provided, evaluates all implemented models.
-            **``num_evals_per_model``** : ``int``
+            ``num_evals_per_model`` : ``int``
                Number of evaluations to run for each model.
 
    
@@ -333,13 +335,13 @@ selecting_OOD_detector.pipeline.tuner
 
                --------------
 
-               **``best_params``** : ``dict``
+               ``best_params``: ``dict``
                   A nested dictionary that stores the best parameters
                   found for each model.
 
 
 
-         ``def run_hyperparameter_search(self, X_train: pandas.core.frame.DataFrame, X_val: pandas.core.frame.DataFrame, y_train: pandas.core.frame.DataFrame = None, y_val: pandas.core.frame.DataFrame = None, save_intermediate_scores: bool = True, save_dir: Optional[str] = None)``
+         ``def run_hyperparameter_search(self, X_train, X_val, y_train=None, y_val=None, save_intermediate_scores=True, save_dir=None)``
             .. container:: desc
 
                Performs hyperparameters search for all models and stores
@@ -347,20 +349,20 @@ selecting_OOD_detector.pipeline.tuner
 
                --------------
 
-               **``X_train``** : ``pd.DataFrame``
+               ``X_train`` : ``pd.DataFrame``
                   Training data.
-               **``X_val``** : ``pd.DataFrame``
+               ``X_val`` : ``pd.DataFrame``
                   Validation data to calculate scores on.
-               **``y_train``** : ``Optional(pd.DataFrame):``
+               ``y_train`` : ``Optional(pd.DataFrame):``
                   Labels corresponding to the training data. Only used
                   for discriminator models.
-               **``y_val``** : ``Optional(pd.DataFrame)``
+               ``y_val`` : ``Optional(pd.DataFrame)``
                   Labels corresponding to the validation data. Only used
                   for discriminator models.
-               **``save_intermediate_scores``** : ``bool``
+               ``save_intermediate_scores`` : ``bool``
                   If True, saves results after each run in case of an
                   abrupt termination of the run.
-               **``save_dir``** : ``Optional(str)``
+               ``save_dir`` : ``Optional(str)``
                   If save_intermediate_scores is True, saves the results
                   to provided directory. If no directory is provided,
                   saves the results to
@@ -369,7 +371,7 @@ selecting_OOD_detector.pipeline.tuner
             
 
 
-         ``def save_best_parameters_as_json(self, save_dir: Optional[str] = None)``
+         ``def save_best_parameters_as_json(self, save_dir=None)``
             .. container:: desc
 
                Saves the top performing paramaters for each model in a
@@ -377,14 +379,14 @@ selecting_OOD_detector.pipeline.tuner
 
                --------------
 
-               **``save_dir``** : ``Optional(str)``
+               ``save_dir`` : ``Optional(str)``
                   Directory to save the results to. If no directory is
                   provided, saves the paramaters to:
                   "../data/hyperparameters/custom/"
 
            
 
-         ``def save_scores_for_evaluated_paramaters(self, save_dir: Optional[str] = None)``
+         ``def save_scores_for_evaluated_paramaters(self, save_dir=None)``
             .. container:: desc
 
                Saves scores for all evaluated parameters for each model.
@@ -392,7 +394,7 @@ selecting_OOD_detector.pipeline.tuner
 
                --------------
 
-               **``save_dir``** : ``Optional(str)``
+               ``save_dir`` : ``Optional(str)``
                   Directory to save the results to. If no directory is
                   provided, saves the paramaters to:
                   "../data/hyperparameters/scores/")
