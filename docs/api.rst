@@ -328,11 +328,6 @@ Hyperparameter Tuner
                hyperparameters for all models to be evaluated. Example:
                {"kernel": ["RFB", "Matern12", "Matern32", "Matern52",
                "RQ"], "n_inducing_points": range(10, 20)}
-            ``hyperparameters_names`` : ``Optional(dict)``
-               A dictionary of lists with strings that specifies the
-               names of parameters that each model uses for
-               initialization. Example: {"AE": ["hidden_sizes",
-               "latent_dim", "lr"], "PPCA": ["n_components"]}
             ``train_params`` : ``Optional(dict)``
                A dictionary that specifies hyperparameters used in the
                training function.
