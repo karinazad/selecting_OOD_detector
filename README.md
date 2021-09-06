@@ -195,8 +195,13 @@ oodpipe.fit(X_train, X_test=X_test, hyperparameters_dir="../data/hyperparameters
     git clone https://github.com/Giovannicina/selecting_OOD_detector.git 
     cd selecting_OOD_detector
     pip install -r requirements.txt
-    sys.path.append(os.getcwd())
+    
+Append a path to the directory:
 
+```py
+sys.path.append(os.getcwd())
+```
+	
 Import OOD pipeline and apply to your data as shown in the example
 above:
 
